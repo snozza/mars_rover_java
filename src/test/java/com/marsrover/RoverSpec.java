@@ -55,5 +55,17 @@ public class RoverSpec {
         assertThat(rover.getDirection()).isEqualTo(Direction.SOUTH);
     }
 
+    @Test
+    public void receiveCommandShouldWrapFromOneEdgeOfGridToTheOther() throws Exception {
+        rover.receiveCommands("LMMM");
+        assertThat(rover.getCoordinates().getX().getLocation()).isEqualTo(maxX + x - 2);
+    }
+
+    @Test
+    public void positionShouldReturnXYAndDirection() throws Exception {
+        rover.receiveCommands("LMMMRMM");
+        assertThat(rover.getPosition()).isEqualTo("8 X 4 N");
+    }
+
 }
 
