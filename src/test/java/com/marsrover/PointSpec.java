@@ -38,4 +38,10 @@ public class PointSpec {
         point.setLocation(point.getMaxLocation());
         assertThat(point.getForwardLocation()).isZero();
     }
+
+    @Test
+    public void getBackwardLocationShouldSetValueToMaxLocationIfZeroLocationIsPassed() {
+        point.setLocation(0);
+        assertThat(point.getBackwardLocation()).isEqualTo(point.getMaxLocation());
+    }
 }
