@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="marsrover.RoverSpec" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-02-27T23:24:17" hostname="Andrews-MacBook-Pro-3.local" time="0.003">
+<testsuite name="marsrover.RoverSpec" tests="6" skipped="0" failures="0" errors="0" timestamp="2015-02-27T23:39:09" hostname="Andrews-MacBook-Pro-3.local" time="0.01">
   <properties/>
-  <testcase name="newInstanceShouldSetRoverCoordinatesAndDirection" classname="marsrover.RoverSpec" time="0.002"/>
-  <testcase name="receiveSingleCommandShouldMoveForwardWhenCommandIsM" classname="marsrover.RoverSpec" time="0.001"/>
+  <testcase name="newInstanceShouldSetRoverCoordinatesAndDirection" classname="marsrover.RoverSpec" time="0.003"/>
+  <testcase name="receiveSingleCommandShouldMoveForwardWhenCommandIsM" classname="marsrover.RoverSpec" time="0.0"/>
   <testcase name="receiveSingleCommandShouldTurnLeftWhenCommandIsL" classname="marsrover.RoverSpec" time="0.0"/>
+  <testcase name="receiveCommandsShouldBeAbleToReceiveMultipleCommands" classname="marsrover.RoverSpec" time="0.0"/>
+  <testcase name="receiveSingleCommandShouldThrowExceptionWhenCommandIsUnknown" classname="marsrover.RoverSpec" time="0.0"/>
+  <testcase name="receiveSingleCommandShouldTurnRightWhenCommandIsR" classname="marsrover.RoverSpec" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

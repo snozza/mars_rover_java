@@ -23,6 +23,12 @@ public class Rover {
         setDirection(directionValue);
     }
 
+    public void receiveCommands(String commands) throws Exception {
+        for (char command : commands.toCharArray()) {
+            receiveSingleCommand(command);
+        }
+    }
+
     public void receiveSingleCommand(char command) throws Exception {
         if (command == 'M') {
           getCoordinates().move(getDirection());

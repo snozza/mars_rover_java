@@ -37,5 +37,23 @@ public class RoverSpec {
         assertThat(rover.getDirection()).isEqualTo(Direction.WEST);
     }
 
+    @Test
+    public void receiveSingleCommandShouldTurnRightWhenCommandIsR() throws Exception {
+        rover.receiveSingleCommand('R');
+        assertThat(rover.getDirection()).isEqualTo(Direction.EAST);
+    }
+
+    @Test(expected = Exception.class)
+    public void receiveSingleCommandShouldThrowExceptionWhenCommandIsUnknown() throws Exception {
+        rover.receiveSingleCommand('P');
+    }
+
+    @Test
+    public void receiveCommandsShouldBeAbleToReceiveMultipleCommands() throws Exception {
+        rover.receiveCommands("RMR");
+        assertThat(rover.getCoordinates().getX().getLocation()).isEqualTo(x + 1);
+        assertThat(rover.getDirection()).isEqualTo(Direction.SOUTH);
+    }
+
 }
 
