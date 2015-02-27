@@ -23,4 +23,5 @@ public class Point {
         if (getLocation() > 0) return getLocation() -1;
         else return getMaxLocation();
     }
+    
 }
