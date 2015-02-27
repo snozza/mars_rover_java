@@ -20,4 +20,16 @@ public class PointSpec {
         assertThat(point.getLocation()).isEqualTo(location);
         assertThat(point.getMaxLocation()).isEqualTo(maxLocation);
     }
+
+    @Test
+    public void getForwardLocationShouldIncreasePointValueByOne() {
+        int expected = point.getLocation() + 1;
+        assertThat(point.getForwardLocation()).isEqualTo(expected);
+    }
+
+    @Test
+    public void getBackwardLocationShouldDecreasePointValueByOne() {
+        int expected = point.getLocation() -1;
+        assertThat(point.getBackwardLocation()).isEqualTo(expected);
+    }
 }
