@@ -32,4 +32,10 @@ public class PointSpec {
         int expected = point.getLocation() -1;
         assertThat(point.getBackwardLocation()).isEqualTo(expected);
     }
+
+    @Test
+    public void getForwardLocationShouldSetValueToZeroIfMaxLocationIsPassed() {
+        point.setLocation(point.getMaxLocation());
+        assertThat(point.getForwardLocation()).isZero();
+    }
 }
