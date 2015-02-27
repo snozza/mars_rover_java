@@ -27,6 +27,12 @@ public class RoverSpec {
 
     @Test
     public void receiveSingleCommandShouldMoveForwardWhenCommandIsM() throws Exception {
+        rover.receiveSingleCommand('M');
+        assertThat(rover.getCoordinates().getY().getLocation()).isEqualTo(y + 1);
+    }
+
+    @Test
+    public void receiveSingleCommandShouldTurnLeftWhenCommandIsL() throws Exception {
         rover.receiveSingleCommand('L');
         assertThat(rover.getDirection()).isEqualTo(Direction.WEST);
     }

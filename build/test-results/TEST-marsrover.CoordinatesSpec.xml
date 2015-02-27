@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="marsrover.CoordinatesSpec" tests="6" skipped="0" failures="0" errors="0" timestamp="2015-02-27T22:43:21" hostname="Andrews-MacBook-Pro-3.local" time="0.066">
+<testsuite name="marsrover.CoordinatesSpec" tests="6" skipped="0" failures="0" errors="0" timestamp="2015-02-27T23:24:17" hostname="Andrews-MacBook-Pro-3.local" time="0.049">
   <properties/>
-  <testcase name="moveShouldDecreaseYWhenDirectionIsSouth" classname="marsrover.CoordinatesSpec" time="0.06"/>
+  <testcase name="moveShouldDecreaseYWhenDirectionIsSouth" classname="marsrover.CoordinatesSpec" time="0.041"/>
   <testcase name="moveShouldIncreaseYWhenDirectionIsNorth" classname="marsrover.CoordinatesSpec" time="0.0"/>
-  <testcase name="toStringShouldReturnXandY" classname="marsrover.CoordinatesSpec" time="0.003"/>
-  <testcase name="newInstanceShouldSetXAndYParams" classname="marsrover.CoordinatesSpec" time="0.0"/>
-  <testcase name="moveShouldIncreaseXWhenDirectionIsEast" classname="marsrover.CoordinatesSpec" time="0.0"/>
-  <testcase name="moveShouldDecreaseXWhenDirectionIsWest" classname="marsrover.CoordinatesSpec" time="0.0"/>
+  <testcase name="toStringShouldReturnXandY" classname="marsrover.CoordinatesSpec" time="0.002"/>
+  <testcase name="newInstanceShouldSetXAndYParams" classname="marsrover.CoordinatesSpec" time="0.001"/>
+  <testcase name="moveShouldIncreaseXWhenDirectionIsEast" classname="marsrover.CoordinatesSpec" time="0.001"/>
+  <testcase name="moveShouldDecreaseXWhenDirectionIsWest" classname="marsrover.CoordinatesSpec" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
