@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="marsrover.RoverSpec" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-02-27T17:11:24" hostname="Andrews-MacBook-Pro-3.local" time="0.003">
+<testsuite name="marsrover.RoverSpec" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-02-27T22:43:21" hostname="Andrews-MacBook-Pro-3.local" time="0.003">
   <properties/>
   <testcase name="newInstanceShouldSetRoverCoordinatesAndDirection" classname="marsrover.RoverSpec" time="0.003"/>
+  <testcase name="receiveSingleCommandShouldMoveForwardWhenCommandIsM" classname="marsrover.RoverSpec" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

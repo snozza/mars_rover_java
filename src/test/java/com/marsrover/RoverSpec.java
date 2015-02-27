@@ -24,5 +24,12 @@ public class RoverSpec {
         assertThat(rover.getCoordinates()).isEqualToComparingFieldByField(roverCoordinates);
         assertThat(rover.getDirection()).isEqualTo(direction);
     }
+
+    @Test
+    public void receiveSingleCommandShouldMoveForwardWhenCommandIsM() throws Exception {
+        rover.receiveSingleCommand('L');
+        assertThat(rover.getDirection()).isEqualTo(Direction.WEST);
+    }
+
 }
 
