@@ -54,5 +54,10 @@ public class CoordinatesSpec {
         assertThat(coordinates.getX()).isEqualToComparingFieldByField(expected);
     }
 
+    @Test
+    public void toStringShouldReturnXandY() {
+        assertThat(coordinates.toString()).isEqualTo(x + " X " + y);
+    }
+
 }
 
