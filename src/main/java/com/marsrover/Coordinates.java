@@ -1,5 +1,7 @@
 package marsrover;
 
+import java.util.List;
+
 public class Coordinates {
 
     private Point x;
@@ -10,15 +12,26 @@ public class Coordinates {
     public void setY(Point value) { y = value; }
     public Point getY() { return y; }
 
-    public Coordinates(int xValue, int yValue, int maxXValue, int maxYValue) {
-      setX(new Point(xValue, maxXValue));
-      setY(new Point(yValue, maxYValue));
+    private Direction direction;
+    public void setDirection(Direction value) {
+        direction = value;
+    }
+    public Direction getDirection() {
+        return direction;
     }
 
-    public void move(final Direction direction) {
+    public Coordinates(Point xValue,
+                       Point yValue,
+                       Direction directionValue) {
+        setX(xValue);
+        setY(yValue);
+        setDirection(directionValue);
+    }
+
+    protected boolean move(final Direction directionValue) {
         int xLocation = x.getLocation();
         int yLocation = y.getLocation();
-        switch (direction) {
+        switch (directionValue) {
             case NORTH:
                 yLocation = y.getForwardLocation();
                 break;
@@ -34,11 +47,36 @@ public class Coordinates {
         }
         x.setLocation(xLocation);
         y.setLocation(yLocation);
+        return true;
     }
+
+    public boolean moveForward() {
+        return move(direction);
+    }
+
+    public boolean moveBackward() {
+        return move(direction.getBackwardDirection());
+    }
+
+    private void changeDirection(Direction directionValue, int directionStep) {
+        int directions = Direction.values().length;
+        System.out.println(directionValue.getValue());
+        int index = (directions + directionValue.getValue() + directionStep) % directions;
+        direction = Direction.values()[index];
+    }
+
+    public void changeDirectionLeft() {
+        changeDirection(direction, -1);
+    }
+
+    public void changeDirectionRight() {
+        changeDirection(direction, 1);
+    }
+
 
     @Override
     public String toString() {
-        return getX().getLocation() + " X " + getY().getLocation();
+        return getX().getLocation() + " X " + getY().getLocation() + " " + getDirection().getShortName();
     }
 
 }

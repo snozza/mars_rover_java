@@ -18,40 +18,37 @@ public class Rover {
         return direction;
     }
 
-    public Rover(Coordinates coordinatesValue, Direction directionValue) {
+    public Rover(Coordinates coordinatesValue) {
         setCoordinates(coordinatesValue);
-        setDirection(directionValue);
     }
 
     public void receiveCommands(String commands) throws Exception {
         for (char command : commands.toCharArray()) {
-            receiveSingleCommand(command);
+            if(!receiveSingleCommand(command)) {
+                break;
+            }
         }
     }
 
-    public void receiveSingleCommand(char command) throws Exception {
-        if (command == 'M') {
-          getCoordinates().move(getDirection());
-        } else if (command == 'L') {
-          changeDirection(-1);
-        } else if (command == 'R') {
-            changeDirection(1);
-        } else  {
-            throw new Exception("Command " + command + " is unknown");
+    public boolean receiveSingleCommand(char command) throws Exception {
+        switch(Character.toUpperCase(command)) {
+            case 'F':
+                return getCoordinates().moveForward();
+            case 'B':
+                return getCoordinates().moveBackward();
+            case 'L':
+                getCoordinates().changeDirectionLeft();
+                return true;
+            case 'R':
+                getCoordinates().changeDirectionRight();
+                return true;
+            default:
+                throw new Exception("Command " + command + " is unknown.");
         }
     }
 
     public String getPosition() {
-        return getCoordinates().toString() + " " + getDirection().getShortName();
+        return getCoordinates().toString();
     }
-
-    private void changeDirection(int directionStep) {
-        int directions = Direction.values().length;
-        int index = (directions + getDirection().getValue() + directionStep) % directions;
-        setDirection(Direction.values()[index]);
-    }
-
 
 }
-  // public void receiveCommands(String commands) throws Exception {
-  //   for (char command:
