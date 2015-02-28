@@ -57,17 +57,18 @@ public class CoordinatesSpec {
         assertThat(coordinates.getY()).isEqualToComparingFieldByField(expected);
     }
 
-    // @Test
-    // public void moveShouldDecreaseXWhenDirectionIsWest() {
-    //     Point expected = new Point(coordinates.getX().getLocation() - 1, maxLocation);
-    //     coordinates.move(Direction.WEST);
-    //     assertThat(coordinates.getX()).isEqualToComparingFieldByField(expected);
-    // }
+    @Test
+    public void moveShouldDecreaseXWhenDirectionIsWest() {
+        Point expected = new Point(x.getLocation() - 1, x.getMaxLocation());
+        coordinates.setDirection(Direction.WEST);
+        coordinates.moveForward();
+        assertThat(coordinates.getX()).isEqualToComparingFieldByField(expected);
+    }
 
-    // @Test
-    // public void toStringShouldReturnXandY() {
-    //     assertThat(coordinates.toString()).isEqualTo(x + " X " + y);
-    // }
+    @Test
+    public void toStringShouldReturnXandY() {
+        assertThat(coordinates.toString()).isEqualTo(1 + " X " + 2 + " N");
+    }
 
 }
 
