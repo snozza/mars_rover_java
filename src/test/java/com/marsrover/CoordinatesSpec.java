@@ -41,12 +41,13 @@ public class CoordinatesSpec {
         assertThat(coordinates.getY()).isEqualToComparingFieldByField(expected);
     }
 
-    // @Test
-    // public void moveShouldIncreaseXWhenDirectionIsEast() {
-    //     Point expected = new Point(coordinates.getX().getLocation() + 1, maxLocation);
-    //     coordinates.move(Direction.EAST);
-    //     assertThat(coordinates.getX()).isEqualToComparingFieldByField(expected);
-    // }
+    @Test
+    public void moveShouldIncreaseXWhenDirectionIsEast() {
+        Point expected = new Point(x.getLocation() + 1, x.getMaxLocation());
+        coordinates.setDirection(Direction.EAST);
+        coordinates.moveForward();
+        assertThat(coordinates.getX()).isEqualToComparingFieldByField(expected);
+    }
 
     // @Test
     // public void moveShouldDecreaseYWhenDirectionIsSouth() {

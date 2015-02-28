@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="marsrover.RoverSpec" tests="9" skipped="0" failures="0" errors="0" timestamp="2015-02-28T09:17:40" hostname="Andrews-MacBook-Pro-3.local" time="0.013">
+<testsuite name="marsrover.RoverSpec" tests="9" skipped="0" failures="0" errors="0" timestamp="2015-02-28T23:33:02" hostname="Andrews-MacBook-Pro-3.local" time="0.01">
   <properties/>
   <testcase name="receiveSingleCommandShouldMoveBackwardWhenCommandIsB" classname="marsrover.RoverSpec" time="0.001"/>
-  <testcase name="newInstanceShouldSetRoverCoordinatesAndDirection" classname="marsrover.RoverSpec" time="0.001"/>
+  <testcase name="newInstanceShouldSetRoverCoordinatesAndDirection" classname="marsrover.RoverSpec" time="0.002"/>
   <testcase name="receiveSingleCommandShouldMoveForwardWhenCommandIsF" classname="marsrover.RoverSpec" time="0.0"/>
-  <testcase name="positionShouldReturnXYAndDirection" classname="marsrover.RoverSpec" time="0.003"/>
+  <testcase name="positionShouldReturnXYAndDirection" classname="marsrover.RoverSpec" time="0.002"/>
   <testcase name="receiveSingleCommandShouldTurnLeftWhenCommandIsL" classname="marsrover.RoverSpec" time="0.0"/>
   <testcase name="receiveCommandShouldWrapFromOneEdgeOfGridToTheOther" classname="marsrover.RoverSpec" time="0.0"/>
   <testcase name="receiveCommandsShouldBeAbleToReceiveMultipleCommands" classname="marsrover.RoverSpec" time="0.0"/>
-  <testcase name="receiveSingleCommandShouldThrowExceptionWhenCommandIsUnknown" classname="marsrover.RoverSpec" time="0.001"/>
-  <testcase name="receiveSingleCommandShouldTurnRightWhenCommandIsR" classname="marsrover.RoverSpec" time="0.001"/>
+  <testcase name="receiveSingleCommandShouldThrowExceptionWhenCommandIsUnknown" classname="marsrover.RoverSpec" time="0.0"/>
+  <testcase name="receiveSingleCommandShouldTurnRightWhenCommandIsR" classname="marsrover.RoverSpec" time="0.0"/>
   <system-out><![CDATA[0
 3
 0
