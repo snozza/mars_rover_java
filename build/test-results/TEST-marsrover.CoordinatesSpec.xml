@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="marsrover.CoordinatesSpec" tests="4" skipped="0" failures="0" errors="0" timestamp="2015-02-28T23:33:02" hostname="Andrews-MacBook-Pro-3.local" time="0.044">
+<testsuite name="marsrover.CoordinatesSpec" tests="5" skipped="0" failures="0" errors="0" timestamp="2015-02-28T23:34:52" hostname="Andrews-MacBook-Pro-3.local" time="0.056">
   <properties/>
-  <testcase name="newInstanceShouldSetDirection" classname="marsrover.CoordinatesSpec" time="0.034"/>
-  <testcase name="moveShouldIncreaseYWhenDirectionIsNorth" classname="marsrover.CoordinatesSpec" time="0.009"/>
+  <testcase name="moveShouldDecreaseYWhenDirectionIsSouth" classname="marsrover.CoordinatesSpec" time="0.052"/>
+  <testcase name="newInstanceShouldSetDirection" classname="marsrover.CoordinatesSpec" time="0.002"/>
+  <testcase name="moveShouldIncreaseYWhenDirectionIsNorth" classname="marsrover.CoordinatesSpec" time="0.0"/>
   <testcase name="newInstanceShouldSetXAndYParams" classname="marsrover.CoordinatesSpec" time="0.0"/>
-  <testcase name="moveShouldIncreaseXWhenDirectionIsEast" classname="marsrover.CoordinatesSpec" time="0.0"/>
+  <testcase name="moveShouldIncreaseXWhenDirectionIsEast" classname="marsrover.CoordinatesSpec" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
