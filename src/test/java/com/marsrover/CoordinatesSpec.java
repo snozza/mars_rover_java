@@ -13,12 +13,14 @@ public class CoordinatesSpec {
     private Coordinates coordinates;
     private Point x;
     private Point y;
+    private List<Obstacle> obstacles;
     private final Direction direction = Direction.NORTH;
 
     @Before
     public void beforeCoordinatesTest() {
         x = new Point(1, 99);
         y = new Point(2, 99);
+        obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30,30));
         coordinates = new Coordinates(x, y, direction);
     }
 

@@ -60,7 +60,6 @@ public class Coordinates {
 
     private void changeDirection(Direction directionValue, int directionStep) {
         int directions = Direction.values().length;
-        System.out.println(directionValue.getValue());
         int index = (directions + directionValue.getValue() + directionStep) % directions;
         direction = Direction.values()[index];
     }
