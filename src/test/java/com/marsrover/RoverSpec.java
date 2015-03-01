@@ -2,6 +2,11 @@ package marsrover;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.*;
 
 public class RoverSpec {
@@ -11,12 +16,14 @@ public class RoverSpec {
     private final Direction direction = Direction.NORTH;
     private Point x;
     private Point y;
+    private List<Obstacle> obstacles;
 
     @Before
     public void beforeRoverTest() {
         x = new Point(1, 9);
         y = new Point(2, 9);
-        roverCoordinates = new Coordinates(x, y, direction);
+        obstacles = new ArrayList<Obstacle>();
+        roverCoordinates = new Coordinates(x, y, direction, obstacles);
         rover = new Rover(roverCoordinates);
     }
 

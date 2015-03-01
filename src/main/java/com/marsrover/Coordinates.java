@@ -20,12 +20,24 @@ public class Coordinates {
         return direction;
     }
 
+    private List<Obstacle> obstacles;
+    public void setObstacles(List<Obstacle> value) {
+        obstacles = value;
+    }
+    public List<Obstacle> getObstacles() {
+        return obstacles;
+    }
+
+    private boolean foundObstacle = false;
+
     public Coordinates(Point xValue,
                        Point yValue,
-                       Direction directionValue) {
+                       Direction directionValue,
+                       List<Obstacle> obstaclesValue) {
         setX(xValue);
         setY(yValue);
         setDirection(directionValue);
+        setObstacles(obstaclesValue);
     }
 
     protected boolean move(final Direction directionValue) {
@@ -45,9 +57,23 @@ public class Coordinates {
                 xLocation = x.getBackwardLocation();
                 break;
         }
-        x.setLocation(xLocation);
-        y.setLocation(yLocation);
-        return true;
+        if (!hasObstacle(xLocation, yLocation)) {
+            x.setLocation(xLocation);
+            y.setLocation(yLocation);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean hasObstacle(int xLocation, int yLocation) {
+        for (Obstacle obstacle : obstacles) {
+            if (obstacle.getX() == xLocation && obstacle.getY() == yLocation) {
+                foundObstacle = true;
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean moveForward() {
@@ -72,9 +98,12 @@ public class Coordinates {
         changeDirection(direction, 1);
     }
 
-
     @Override
     public String toString() {
+        String status = "";
+        if (foundObstacle) {
+            status = " NOK";
+        }
         return getX().getLocation() + " X " + getY().getLocation() + " " + getDirection().getShortName();
     }
 

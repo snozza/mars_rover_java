@@ -21,7 +21,7 @@ public class CoordinatesSpec {
         x = new Point(1, 99);
         y = new Point(2, 99);
         obstacles = Arrays.asList(new Obstacle(20, 20), new Obstacle(30,30));
-        coordinates = new Coordinates(x, y, direction);
+        coordinates = new Coordinates(x, y, direction, obstacles);
     }
 
     @Test
@@ -33,6 +33,11 @@ public class CoordinatesSpec {
     @Test
     public void newInstanceShouldSetDirection() {
         assertThat(coordinates.getDirection()).isEqualTo(direction);
+    }
+
+    @Test
+    public void newInstanceShouldSetObstacles() {
+        assertThat(coordinates.getObstacles()).hasSameElementsAs(obstacles);
     }
 
     @Test
