@@ -79,9 +79,27 @@ public class RoverSpec {
     }
 
     @Test
+    public void receivecommandsShouldStopWhenObstacleIsFound() throws Exception {
+        int expected = x.getLocation() + 1;
+        rover.getCoordinates().setObstacles(Arrays.asList(new Obstacle(expected + 1, y.getLocation())));
+        rover.getCoordinates().setDirection(Direction.EAST);
+        rover.receiveCommands("FFFRF");
+        assertThat(rover.getCoordinates().getX().getLocation()).isEqualTo(expected);
+        assertThat(rover.getCoordinates().getDirection()).isEqualTo(Direction.EAST);
+    }
+
+    @Test
     public void positionShouldReturnXYAndDirection() throws Exception {
         rover.receiveCommands("LFFFRFF");
         assertThat(rover.getPosition()).isEqualTo("8 X 4 N");
+    }
+
+    @Test
+    public void positionShouldReturnNOKWhenObstacleIsFound() throws Exception {
+        rover.getCoordinates().setObstacles(Arrays.asList(new Obstacle(x.getLocation() + 1, y.getLocation())));
+        rover.getCoordinates().setDirection(Direction.EAST);
+        rover.receiveCommands("F");
+        assertThat(rover.getPosition()).endsWith(" NOK");
     }
 
 }

@@ -104,7 +104,7 @@ public class Coordinates {
         if (foundObstacle) {
             status = " NOK";
         }
-        return getX().getLocation() + " X " + getY().getLocation() + " " + getDirection().getShortName();
+        return getX().getLocation() + " X " + getY().getLocation() + " " + getDirection().getShortName() + status;
     }
 
 }
